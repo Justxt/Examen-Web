@@ -377,6 +377,8 @@ ul {
 .products-slider {
   position: relative;
 
+  // RETO
+
   &__viewport {
     overflow-x: auto;
     scrollbar-width: none; // oculto el scroollbar feo
@@ -443,6 +445,8 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  // RETO
 
   .products-slider__grid & {
     flex: 0 0 auto;
