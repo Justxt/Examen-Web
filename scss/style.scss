@@ -377,13 +377,22 @@ ul {
 .products-slider {
   position: relative;
 
-  &__grid {
-    @include grid(2, 20px);
-    @media (min-width: 768px) {
-      @include grid(4, 20px);
+  &__viewport {
+    overflow-x: auto;
+    scrollbar-width: none; // oculto el scroollbar feo
+    &::-webkit-scrollbar { 
+      display: none;
     }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding-bottom: 15px;
+
      @media (max-width: 576px) {
-       @include grid(1, 15px);
+       gap: 15px;
      }
   }
 }
@@ -434,6 +443,18 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .products-slider__grid & {
+    flex: 0 0 auto;
+    width: 260px;
+
+    @media (max-width: 768px) {
+        width: 240px;
+    }
+     @media (max-width: 576px) {
+        width: 220px;
+     }
+  }
 
   &__discount-tag {
     position: absolute;
